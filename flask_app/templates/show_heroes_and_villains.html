@@ -24,26 +24,70 @@
                 <div class="d-flex justify-content-center border border-danger">
                     <img class="responsive my-4" src="{{ session.image }}" alt="{{ session.name }}">
                 </div>
-                <div class="flex-column border border-warning">
+                <div class="flex-column column-width-50% my-auto border border-warning">
                     <div class="p-4 border border-warning">
                         <h3 class="text-light">{{ session.name }}</h3>
                     </div>
                     <div class="d-flex justify-content-around my-2 border border-success">
-                        <a class="mx-4 text-decoration-none text-light" href="#">APPEARANCE</a>
-                        <a class="mx-4 text-decoration-none text-light" href="#">BIOGRAPHY</a>
-                        <a class="mx-4 text-decoration-none text-light" href="#">CONNECTIONS</a>
-                        <a class="mx-4 text-decoration-none text-light" href="#">POWERSTATS</a>
+                        <a class="mx-4 text-decoration-none text-light" href="#appearance">APPEARANCE</a>
+                        <a class="mx-4 text-decoration-none text-light" href="#biography">BIOGRAPHY</a>
+                        <a class="mx-4 text-decoration-none text-light" href="#connections">CONNECTIONS</a>
+                        <a class="mx-4 text-decoration-none text-light" href="#powerstats">POWERSTATS</a>
                     </div>
-                    <div class="text-light border border-primary p-4">
+                    <!-- Appearance -->
+                    <!-- <div id="appearance" class="text-light border border-primary p-4">
                         <p><strong>Gender:</strong> {{ session.gender }}</p>
                         <p><strong>Race:</strong> {{ session.race }}</p>
                         <p><strong>Feet Tall:</strong> {{ session.height }}</p>
                         <p><strong>Centimeters Tall:</strong> {{ session.cm }}</p>
-                        <p><strong>Weight:</strong> {{ session.weight }}</p>
+                        <p><strong>Pounds:</strong> {{ session.weight }}s</p>
                         <p><strong>Kilograms:</strong> {{ session.kilograms }}</p>
                         <p><strong>Eye Color:</strong> {{ session.eye_color }}</p>
                         <p><strong>Hair Color:</strong> {{ session.hair_color }}</p>
+                    </div> -->
+                    <!-- End of Appearance -->
+
+                    <!-- Biography -->
+                    <!-- <div id="biography" class="text-light border border-primary p-4">
+                        <p><strong>Full name:</strong> {{ session.full_name }}</p>
+                        <p><strong>Alter egos:</strong> {{ session.alter_egos }}</p>
+                        <p><strong>Aliases:</strong> {{ session.aliases }}</p>
+                        <p><strong>Place of birth:</strong> {{ session.place_of_birth }}</p>
+                        <p><strong>Occupation:</strong> {{ session.occupation }}</p>
+                        <p><strong>Base:</strong> {{ session.base }}</p>
+                        <p><strong>First appearance:</strong> {{ session.first_appearance }}s</p>
+                        <p><strong>Publisher:</strong> {{ session.publisher }}</p>
+                        <p><strong>Alignment:</strong> {{ session.alignment }}</p>
+                    </div> -->
+                    <!-- End of Biography -->
+
+                    <!-- Connections -->
+                    <div id="connections" class="text-light border border-primary p-4">
+                        <p><strong>Group affiliation:</strong> {{ session.group_affiliation }}</p>
+                        <p><strong>Relatives:</strong> {{ session.relatives }}</p>
                     </div>
+                    <!-- End of Connections -->
+
+                    <!-- Powerstats -->
+                    <!-- <div id="powerstats" class="text-light border border-primary p-4">
+                        <p><strong>Intelligence:</strong> {{ session.intelligence }}</p>
+                        <p><strong>Strength:</strong> {{ session.strength }}</p>
+                        <p><strong>Speed:</strong> {{ session.speed }}</p>
+                        <p><strong>Durability:</strong> {{ session.durability }}</p>
+                        <p><strong>Power:</strong> {{ session.power }}</p>
+                        <p><strong>Combat:</strong> {{ session.combat }}</p>
+                    </div> -->
+                    <!-- End of Powerstats -->
+
+                    <!-- Alignment -->
+                    <div class="p-4 mt-2 text-center text-light border border-warning">
+                        {% if session.alignment == "good" %}
+                            <h3>Hero</h3>
+                        {% else %}
+                            <h3>Villain</h3>
+                        {% endif %}
+                    </div>
+                    <!-- End of Alignment -->
                 </div>
             </div>
         </div>

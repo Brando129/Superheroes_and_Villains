@@ -62,7 +62,7 @@ def search_heroes_and_villains():
     # Powerstats
     session['intelligence'] = response_two.json()['powerstats']['intelligence']
     session['strength'] = response_two.json()['powerstats']['strength']
-    session['speedd'] = response_two.json()['powerstats']['speed']
+    session['speed'] = response_two.json()['powerstats']['speed']
     session['durability'] = response_two.json()['powerstats']['durability']
     session['power'] = response_two.json()['powerstats']['power']
     session['combat'] = response_two.json()['powerstats']['combat']
