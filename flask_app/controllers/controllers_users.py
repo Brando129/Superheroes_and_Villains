@@ -45,7 +45,13 @@ def search_heroes_and_villains():
     # Biography
     session['full_name'] = response_two.json()['biography']['full-name']
     session['alter_egos'] = response_two.json()['biography']['alter-egos']
-    session['aliases'] = response_two.json()['biography']['aliases'] # needs for loop
+    # aliases = response_two.json()['biography']['aliases']
+    # print("aliases", aliases)
+    # session['aliases'] = []
+    # for i in range(len(aliases)):
+    #     session['aliases'].append(response_two.json()['biography']['aliases'][i])
+    # #     print(session['aliases'])
+    session['aliases'] = response_two.json()['biography']['aliases']
     session['place_of_birth'] = response_two.json()['biography']['place-of-birth']
     session['base'] = response_two.json()['work']['base']
     session['occupation'] = response_two.json()['work']['occupation']
