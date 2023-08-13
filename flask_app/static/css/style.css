@@ -4,88 +4,29 @@
     padding: 0;
 }
 
+/* Page Background */
 .background {
     background-image: url("/static/img/brick_wall.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.responsive {
-    width: 90%;
-    height: auto;
-}
-
+/* Card Background */
 .grad {
     background-image: linear-gradient(to bottom right, silver, black);
 }
 
-.search_bar {
-    width: 300px;
-    border: 2px solid black;
-    box-shadow: 5px 5px black;
-}
-
-.search_button {
-    width: 75px;
-    height: 37px;
-    border: 2px solid black;
-    box-shadow: 5px 5px black;
-}
-
-.profile_pic {
-    border: 2px solid black;
-}
-
-.hero_shadow {
-    box-shadow: 0.7rem 0.7rem black;
-}
-
-.scrollbar::-webkit-scrollbar
-{
-    width: 12px;
-    background-color: transparent;
-    height: 7px;
-}
-
-.scrollbar::-webkit-scrollbar-track
-{
-    border-radius: 10px;
-    background-color: transparent;
-}
-
-.scrollbar::-webkit-scrollbar-thumb
-{
-    border-radius: 10px;
-    background-color: black;
-}
-
-.app_icon {
-    height: 20px;
-    margin-right: 5px;
-}
-
+/* Card Shadow */
 .card {
     box-shadow: 20px 20px black;
     border: 5px solid black;
 }
 
-.fields {
-    background-image: linear-gradient(to bottom right, whitesmoke, black);
-    box-shadow: 5px 5px black;
-    border: 2px solid black;
-    opacity: 75%;
-}
-
-.fields_txt {
-    color: whitesmoke;
-    text-shadow: 1px 1px black;
-}
-
+/* Project Logo */
 .title {
     background-image: linear-gradient(to bottom right, whitesmoke, black);
     box-shadow: 10px 10px black;
     border: 2px solid black;
-    opacity: 75%;
 }
 
 .title_hero_txt {
@@ -102,27 +43,100 @@
     color: darkred;
     text-shadow: 2px 2px black;
 }
+/* End of Project Logo */
 
+/* Search Bar and Button */
+.search_bar {
+    width: 300px;
+    border: 2px solid black;
+    box-shadow: 5px 5px black;
+}
+
+.search_button {
+    width: 75px;
+    height: 37px;
+    border: 2px solid black;
+    box-shadow: 5px 5px black;
+}
+/* End of Search Bar and Button */
+
+/* Hero/Villain Picture */
+.profile_pic {
+    border: 2px solid black;
+}
+
+.responsive {
+    width: 90%;
+    height: auto;
+}
+
+.hero_shadow {
+    box-shadow: 0.7rem 0.7rem black;
+}
+/* End of Hero/Villain Picture */
+
+/* Fields */
+.fields {
+    background-image: linear-gradient(to bottom right, whitesmoke, black);
+    box-shadow: 5px 5px black;
+    border: 2px solid black;
+}
+
+.fields_txt {
+    color: whitesmoke;
+    text-shadow: 1px 1px black;
+}
+
+.app_icon {
+    height: 20px;
+    margin-right: 5px;
+}
+/* End of Fields */
+
+/* Fields Scroll Bar */
+.scrollbar::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: transparent;
+    height: 7px;
+}
+
+.scrollbar::-webkit-scrollbar-track
+{
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: whitesmoke;
+    border: 2px solid black;
+}
+/* End of Fields Scroll Bar */
+
+/* Hero */
 .hero {
     background-image: linear-gradient(to bottom right, darkblue, black);
     box-shadow: 10px 10px black;
     border: 2px solid black;
-    opacity: 75%;
 }
 
 .hero_txt {
     color: whitesmoke;
     text-shadow: 2px 2px black;
 }
+/* End of Hero */
 
+/* Villain */
 .villain {
     background-image: linear-gradient(to bottom right, darkred, black);
     box-shadow: 10px 10px black;
     border: 2px solid black;
-    opacity: 75%;
 }
 
 .villain_txt {
     color: whitesmoke;
     text-shadow: 2px 2px black;
 }
+/* End of Villain */
