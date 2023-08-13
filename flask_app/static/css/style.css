@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+.background {
+    background-image: url("/static/img/brick_wall.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .responsive {
     width: 90%;
     height: auto;
@@ -24,6 +30,10 @@
     height: 37px;
     border: 2px solid black;
     box-shadow: 5px 5px black;
+}
+
+.profile_pic {
+    border: 2px solid black;
 }
 
 .hero_shadow {
@@ -54,10 +64,10 @@
     margin-right: 5px;
 }
 
-/* .card {
+.card {
     box-shadow: 20px 20px black;
-    border: 2px solid black;
-} */
+    border: 5px solid black;
+}
 
 .fields {
     background-image: linear-gradient(to bottom right, whitesmoke, black);

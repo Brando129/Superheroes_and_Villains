@@ -10,7 +10,7 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Heroes and Villains</title>
 </head>
-<body class="bg-light">
+<body class="background">
     <div class="container">
         <div class="flex-column col-md-10 mx-auto my-5 p-3 grad card rounded">
             <div class="d-flex align-items-center justify-content-between p-4">
@@ -23,7 +23,7 @@
             </div>
             <div class="d-flex mb-3">
                 <div class="d-flex justify-content-center">
-                    <img class="responsive my-4 hero_shadow border border-dark rounded" src="{{ session.image }}" alt="{{ session.name }}">
+                    <img class="responsive profile_pic my-4 hero_shadow rounded" src="{{ session.image }}" alt="{{ session.name }}">
                 </div>
                 <div class="col-7 my-auto">
                     <div class="p-4">
@@ -39,92 +39,124 @@
                         <!-- Appearance -->
                         <div id="appearance" class="col-12 text-light p-4">
                             <div class="d-flex justify-content-between mb-2">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Gender</strong></p>
-                                <p>{{ session.gender }}</p>
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">GENDER</strong></p>
+                                <p class="fields_txt">{{ session.gender }}</p>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Race</strong></p>
-                                <p>{{ session.race }}</p>
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">RACE</strong></p>
+                                <p class="fields_txt"><strong>{{ session.race }}</strong></p>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Height</strong></p>
-                                <p>{{ session.height }}</p>
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">HEIGHT</strong></p>
+                                <p class="fields_txt"><strong>{{ session.height }}</strong></p>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Centimeters</strong></p>
-                                <p>{{ session.cm }}</p>
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">CENTIMETERS</strong></p>
+                                <p class="fields_txt"><strong>{{ session.cm }}</strong></p>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Weight</strong></p>
-                                <p>{{ session.weight }}s</p>
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">WEIGHT</strong></p>
+                                <p class="fields_txt"><strong>{{ session.weight }}s</strong></p>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Kilograms</strong></p>
-                                <p>{{ session.kilograms }}</p>
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">KILOGRAMS</strong></p>
+                                <p class="fields_txt"><strong>{{ session.kilograms }}</strong></p>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Eye Color</strong></p>
-                                <p>{{ session.eye_color }}</p>
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">EYE COLOR</strong></p>
+                                <p class="fields_txt"><strong>{{ session.eye_color }}</strong></p>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Hair Color</strong></p>
-                                <p>{{ session.hair_color }}</p>
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">HAIR COLOR</strong></p>
+                                <p class="fields_txt"><strong>{{ session.hair_color }}</strong></p>
                             </div>
                         </div>
                         <!-- End of Appearance -->
                         <!-- Biography -->
                         <div id="biography" class="col-12 text-light p-4">
-                            <p><strong>Full name:</strong> {{ session.full_name }}</p>
-                            <p><strong>Alter egos:</strong> {{ session.alter_egos }}</p>
-                            <p><strong>Aliases:</strong> {{ session.aliases }}</p>
-                            <p><strong>Place of birth:</strong> {{ session.place_of_birth }}</p>
-                            <p><strong>Occupation:</strong> {{ session.occupation }}</p>
-                            <p><strong>Base:</strong> {{ session.base }}</p>
-                            <p><strong>First appearance:</strong> {{ session.first_appearance }}</p>
+                            <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">FULL NAME:</strong> {{ session.full_name }}</p>
+                            <hr>
+                            <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">ALTER EGOS:</strong> {{ session.alter_egos }}</p>
+                            <hr>
+                            <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">ALIASES:</strong> {{ session.aliases }}</p>
+                            <hr>
+                            <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">PLACE OF BIRTH:</strong> {{ session.place_of_birth }}</p>
+                            <hr>
+                            <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">OCCUPATION:</strong> {{ session.occupation }}</p>
+                            <hr>
+                            <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">BASE:</strong> {{ session.base }}</p>
+                            <hr>
+                            <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">FIRST APPEARANCE:</strong> {{ session.first_appearance }}</p>
+                            <hr>
                             <!-- <p><strong>Alignment:</strong> {{ session.alignment }}</p> -->
                         </div>
                         <!-- End of Biography -->
                         <!-- Connections -->
                         <div id="connections" class="col-12 text-light p-4">
-                            <p><strong>Group affiliation:</strong> {{ session.group_affiliation }}</p>
-                            <p><strong>Relatives:</strong> {{ session.relatives }}</p>
-                            <p><strong>Publisher:</strong> {{ session.publisher }}</p>
+                            <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">GROUP AFFILIATION</strong></p>
+                            <p class="fields_txt">{{ session.group_affiliation }}</p>
+                            <hr>
+                            <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">RELATIVES</strong></p>
+                            <P class="fields_txt">{{ session.relatives }}</P>
+                            <hr>
+                            <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">PUBLISHER</strong></p>
+                            <p class="fields_txt">{{ session.publisher }}</p>
+                            <hr>
                         </div>
                         <!-- End of Connections -->
                         <!-- Powerstats -->
                         <div id="powerstats" class="col-12 text-light p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Intelligence</strong></p>
-                                <p>{{ session.intelligence }}</p>
-                            </div>
-                            <div class="d-flex justify-content-between mb-3">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Strength</strong></p>
-                                {% if session.strength == "100" %}
-                                <p class="text-warning">{{ session.strength }}</p>
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">INTELLIGENCE</strong></p>
+                                {% if session.intelligence == '100' %}
+                                    <p class="text-warning text-warning fields_txt">{{ session.intelligence }}</p>
                                 {% else %}
-                                <p>{{ session.strength }}</p>
+                                    <p class="fields_txt">{{ session.intelligence }}</p>
                                 {% endif %}
                             </div>
                             <div class="d-flex justify-content-between mb-3">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Speed</strong></p>
-                                <p>{{ session.speed }}</p>
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">STRENGTH</strong></p>
+                                {% if session.strength == '100' %}
+                                    <p class="text-warning text-warning fields_txt">{{ session.strength }}</p>
+                                {% else %}
+                                    <p class="fields_txt">{{ session.strength }}</p>
+                                {% endif %}
                             </div>
                             <div class="d-flex justify-content-between mb-3">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Durability</strong></p>
-                                <p>{{ session.durability }}</p>
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">SPEED</strong></p>
+                                    {% if session.speed == '100' %}
+                                <p class="text-warning text-warning fields_txt">{{ session.speed }}</p>
+                                {% else %}
+                                    <p class="fields_txt">{{ session.speed }}</p>
+                                {% endif %}
                             </div>
                             <div class="d-flex justify-content-between mb-3">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Power</strong></p>
-                                <p>{{ session.power }}</p>
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">DURABILITY</strong></p>
+                                {% if session.durability == '100' %}
+                                    <p class="text-warning text-warning fields_txt">{{ session.durability }}</p>
+                                {% else %}
+                                    <p class="fields_txt">{{ session.durability }}</p>
+                                {% endif %}
                             </div>
                             <div class="d-flex justify-content-between mb-3">
-                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Combat</strong></p>
-                                <p>{{ session.combat }}</p>
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">POWER</strong></p>
+                                {% if session.power == '100' %}
+                                    <p class="text-warning text-warning fields_txt">{{ session.power }}</p>
+                                {% else %}
+                                    <p class="fields_txt">{{ session.power }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">COMBAT</strong></p>
+                                {% if session.combat == '100' %}
+                                    <p class="text-warning text-warning fields_txt">{{ session.combat }}</p>
+                                {% else %}
+                                    <p class="fields_txt">{{ session.combat }}</p>
+                                {% endif %}
                             </div>
                         </div>
                         <!-- End of Powerstats -->
                     </div>
-
                     <!-- Alignment -->
                     <div class="p-4 mt-2 text-center text-light">
                         {% if session.alignment == "good" %}
