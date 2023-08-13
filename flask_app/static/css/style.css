@@ -4,19 +4,115 @@
     padding: 0;
 }
 
-.background {
-    background-image: url("/static/img/background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .responsive {
     width: 90%;
     height: auto;
 }
 
-.form {
+.grad {
+    background-image: linear-gradient(to bottom right, silver, black);
+}
+
+.search_bar {
+    width: 300px;
+    border: 2px solid black;
+    box-shadow: 5px 5px black;
+}
+
+.search_button {
+    width: 75px;
     height: 37px;
-    width: auto;
-    margin-left: 10px;
+    border: 2px solid black;
+    box-shadow: 5px 5px black;
+}
+
+.hero_shadow {
+    box-shadow: 0.7rem 0.7rem black;
+}
+
+.scrollbar::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: transparent;
+    height: 7px;
+}
+
+.scrollbar::-webkit-scrollbar-track
+{
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: black;
+}
+
+.app_icon {
+    height: 20px;
+    margin-right: 5px;
+}
+
+/* .card {
+    box-shadow: 20px 20px black;
+    border: 2px solid black;
+} */
+
+.fields {
+    background-image: linear-gradient(to bottom right, whitesmoke, black);
+    box-shadow: 5px 5px black;
+    border: 2px solid black;
+    opacity: 75%;
+}
+
+.fields_txt {
+    color: whitesmoke;
+    text-shadow: 1px 1px black;
+}
+
+.title {
+    background-image: linear-gradient(to bottom right, whitesmoke, black);
+    box-shadow: 10px 10px black;
+    border: 2px solid black;
+    opacity: 75%;
+}
+
+.title_hero_txt {
+    color: darkblue;
+    text-shadow: 2px 2px black;
+}
+
+.title_and_txt {
+    color: whitesmoke;
+    text-shadow: 2px 2px black;
+}
+
+.title_villain_txt {
+    color: darkred;
+    text-shadow: 2px 2px black;
+}
+
+.hero {
+    background-image: linear-gradient(to bottom right, darkblue, black);
+    box-shadow: 10px 10px black;
+    border: 2px solid black;
+    opacity: 75%;
+}
+
+.hero_txt {
+    color: whitesmoke;
+    text-shadow: 2px 2px black;
+}
+
+.villain {
+    background-image: linear-gradient(to bottom right, darkred, black);
+    box-shadow: 10px 10px black;
+    border: 2px solid black;
+    opacity: 75%;
+}
+
+.villain_txt {
+    color: whitesmoke;
+    text-shadow: 2px 2px black;
 }

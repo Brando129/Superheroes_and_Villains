@@ -10,45 +10,70 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Heroes and Villains</title>
 </head>
-<body class="background">
+<body class="bg-light">
     <div class="container">
-        <div class="d-flex flex-column col-md-10 mx-auto my-5 p-3 bg-dark rounded">
+        <div class="flex-column col-md-10 mx-auto my-5 p-3 grad card rounded">
             <div class="d-flex align-items-center justify-content-between p-4">
-                <h3 class="responsive text-light">Heroes and Villains</h3>
+                <h1 class="responsive text-light"><span class="title p-2 rounded"><span class="title_hero_txt">Heroes</span>
+                <span class="title_and_txt">and</span> <span class="title_villain_txt">Villains</span></span></h1>
                 <form class="d-flex align-items-center" action="/search/heroes/villains" method="POST">
-                    <input type="submit" value="Search" class="btn btn-warning btn-outline-dark">
-                    <input type="text" name="name" class="form">
+                    <input type="text" name="name" class="search_bar rounded p-1 mx-2" placeholder="Search Heroes and Villains...">
+                    <input type="submit" value="Search" class="search_button rounded">
                 </form>
             </div>
-            <div class="d-flex mb-3 border border-success">
+            <div class="d-flex mb-3">
                 <div class="d-flex justify-content-center">
-                    <img class="responsive my-4 opacity-75" src="{{ session.image }}" alt="{{ session.name }}">
+                    <img class="responsive my-4 hero_shadow border border-dark rounded" src="{{ session.image }}" alt="{{ session.name }}">
                 </div>
-                <div class="col-7 my-auto border border-warning">
+                <div class="col-7 my-auto">
                     <div class="p-4">
-                        <h3 class="text-light">{{ session.name }}</h3>
+                        <h1 class="text-light text-center title hero_txt rounded">{{ session.name }}</h1>
                     </div>
-                    <div class="d-flex justify-content-around my-2">
+                    <div class="d-flex justify-content-around fields fields_txt rounded">
                         <a class="mx-4 text-decoration-none text-light" href="#appearance">APPEARANCE</a>
                         <a class="mx-4 text-decoration-none text-light" href="#biography">BIOGRAPHY</a>
                         <a class="mx-4 text-decoration-none text-light" href="#connections">CONNECTIONS</a>
                         <a class="mx-4 text-decoration-none text-light" href="#powerstats">POWERSTATS</a>
                     </div>
-                    <div class="d-flex overflow-x-auto border border-danger">
+                    <div class="d-flex scrollbar overflow-x-auto">
                         <!-- Appearance -->
                         <div id="appearance" class="col-12 text-light p-4">
-                            <p><strong>Gender:</strong> {{ session.gender }}</p>
-                            <p><strong>Race:</strong> {{ session.race }}</p>
-                            <p><strong>Feet Tall:</strong> {{ session.height }}</p>
-                            <p><strong>Centimeters Tall:</strong> {{ session.cm }}</p>
-                            <p><strong>Pounds:</strong> {{ session.weight }}s</p>
-                            <p><strong>Kilograms:</strong> {{ session.kilograms }}</p>
-                            <p><strong>Eye Color:</strong> {{ session.eye_color }}</p>
-                            <p><strong>Hair Color:</strong> {{ session.hair_color }}</p>
+                            <div class="d-flex justify-content-between mb-2">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Gender</strong></p>
+                                <p>{{ session.gender }}</p>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Race</strong></p>
+                                <p>{{ session.race }}</p>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Height</strong></p>
+                                <p>{{ session.height }}</p>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Centimeters</strong></p>
+                                <p>{{ session.cm }}</p>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Weight</strong></p>
+                                <p>{{ session.weight }}s</p>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Kilograms</strong></p>
+                                <p>{{ session.kilograms }}</p>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Eye Color</strong></p>
+                                <p>{{ session.eye_color }}</p>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Hair Color</strong></p>
+                                <p>{{ session.hair_color }}</p>
+                            </div>
                         </div>
                         <!-- End of Appearance -->
                         <!-- Biography -->
-                        <div id="biography" class="col-12 text-light border border-primary p-4">
+                        <div id="biography" class="col-12 text-light p-4">
                             <p><strong>Full name:</strong> {{ session.full_name }}</p>
                             <p><strong>Alter egos:</strong> {{ session.alter_egos }}</p>
                             <p><strong>Aliases:</strong> {{ session.aliases }}</p>
@@ -60,20 +85,42 @@
                         </div>
                         <!-- End of Biography -->
                         <!-- Connections -->
-                        <div id="connections" class="col-12 text-light border border-primary p-4">
+                        <div id="connections" class="col-12 text-light p-4">
                             <p><strong>Group affiliation:</strong> {{ session.group_affiliation }}</p>
                             <p><strong>Relatives:</strong> {{ session.relatives }}</p>
                             <p><strong>Publisher:</strong> {{ session.publisher }}</p>
                         </div>
                         <!-- End of Connections -->
                         <!-- Powerstats -->
-                        <div id="powerstats" class="col-12 text-light border border-primary p-4">
-                            <p><strong>Intelligence:</strong> {{ session.intelligence }}</p>
-                            <p><strong>Strength:</strong> {{ session.strength }}</p>
-                            <p><strong>Speed:</strong> {{ session.speed }}</p>
-                            <p><strong>Durability:</strong> {{ session.durability }}</p>
-                            <p><strong>Power:</strong> {{ session.power }}</p>
-                            <p><strong>Combat:</strong> {{ session.combat }}</p>
+                        <div id="powerstats" class="col-12 text-light p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Intelligence</strong></p>
+                                <p>{{ session.intelligence }}</p>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Strength</strong></p>
+                                {% if session.strength == "100" %}
+                                <p class="text-warning">{{ session.strength }}</p>
+                                {% else %}
+                                <p>{{ session.strength }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Speed</strong></p>
+                                <p>{{ session.speed }}</p>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Durability</strong></p>
+                                <p>{{ session.durability }}</p>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Power</strong></p>
+                                <p>{{ session.power }}</p>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <p><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong>Combat</strong></p>
+                                <p>{{ session.combat }}</p>
+                            </div>
                         </div>
                         <!-- End of Powerstats -->
                     </div>
@@ -81,9 +128,13 @@
                     <!-- Alignment -->
                     <div class="p-4 mt-2 text-center text-light">
                         {% if session.alignment == "good" %}
-                            <h3>Hero</h3>
+                        <div class="hero rounded">
+                            <h1 class="hero_txt">Hero</h1>
+                        </div>
                         {% else %}
-                            <h3>Villain</h3>
+                            <div class="villain rounded">
+                                <h1 class="villain_txt">Villain</h1>
+                            </div>
                         {% endif %}
                     </div>
                     <!-- End of Alignment -->
