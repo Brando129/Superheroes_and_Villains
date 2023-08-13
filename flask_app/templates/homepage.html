@@ -11,11 +11,13 @@
     <title>Home Page</title>
 </head>
 <body class="background">
-    <div class="container my-5">
-        <h1 class="responsive text-light"><span class="title p-2 rounded"><span class="title_hero_txt">Heroes</span>
-        <span class="title_and_txt">and</span> <span class="title_villain_txt">Villains</span></span></h1>
-        <div class="col-md-4 mt-5">
-            <form class="d-flex align-items-center" action="/search/heroes/villains" method="POST">
+    <div class="container mt-5">
+        <div class="d-flex my-5 flex-column align-items-center justify-content-around">
+            <!-- Project Name/Logo -->
+            <h1 class="mb-5"><span class="title p-2 rounded"><span class="title_hero_txt">Heroes</span>
+            <span class="title_and_txt">and</span> <span class="title_villain_txt">Villains</span></span></h1>
+            <!-- Search Bar and Button -->
+            <form action="/search/heroes/villains" method="POST">
                 <input type="text" name="name" class="search_bar rounded p-1 mx-2" placeholder="Search Heroes and Villains...">
                 <input type="submit" value="Search" class="search_button rounded">
             </form>
