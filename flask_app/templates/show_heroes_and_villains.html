@@ -11,8 +11,11 @@
     <title>Heroes and Villains</title>
 </head>
 <body class="background">
+    <!-- Page Container -->
     <div class="container">
+        <!-- Card -->
         <div class="flex-column col-md-10 mx-auto my-5 p-3 grad card rounded">
+            <!-- Navbar -->
             <div class="d-flex align-items-center justify-content-between p-4">
                 <h1><span class="title p-2 rounded"><span class="title_hero_txt">Heroes</span>
                 <span class="title_and_txt">and</span> <span class="title_villain_txt">Villains</span></span></h1>
@@ -21,20 +24,27 @@
                     <input type="submit" value="Search" class="search_button rounded">
                 </form>
             </div>
+            <!-- End of Navbar -->
+            <!-- Card Content -->
             <div class="d-flex mb-3">
+                <!-- Being Image -->
                 <div class="d-flex justify-content-center">
                     <img class="responsive profile_pic my-4 hero_shadow rounded" src="{{ session.image }}" alt="{{ session.name }}">
                 </div>
+                <!-- Bening Info -->
                 <div class="col-7 my-auto">
+                    <!-- Being Name -->
                     <div class="p-4">
                         <h1 class="text-center title hero_txt rounded">{{ session.name }}</h1>
                     </div>
+                    <!-- Field Links -->
                     <div class="d-flex justify-content-around fields fields_txt rounded">
                         <a class="mx-4 text-decoration-none text-light" href="#appearance">APPEARANCE</a>
                         <a class="mx-4 text-decoration-none text-light" href="#biography">BIOGRAPHY</a>
                         <a class="mx-4 text-decoration-none text-light" href="#connections">CONNECTIONS</a>
                         <a class="mx-4 text-decoration-none text-light" href="#powerstats">POWERSTATS</a>
                     </div>
+                    <!-- Fields Box -->
                     <div class="d-flex scrollbar overflow-x-auto">
                         <!-- Appearance -->
                         <div id="appearance" class="col-12 text-light p-4">
@@ -78,7 +88,10 @@
                             <hr>
                             <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">ALTER EGOS:</strong> {{ session.alter_egos }}</p>
                             <hr>
-                            <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">ALIASES:</strong> {{ session.aliases }}</p>
+                            <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">ALIASES:</strong></p>
+                            {% for alias in aliases %}
+                                <p>{{ session.aliases }}</p>
+                            {% endfor %}
                             <hr>
                             <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">PLACE OF BIRTH:</strong> {{ session.place_of_birth }}</p>
                             <hr>
@@ -157,6 +170,7 @@
                         </div>
                         <!-- End of Powerstats -->
                     </div>
+                    <!-- End of Fields Box -->
                     <!-- Alignment -->
                     <div class="p-4 mt-2 text-center text-light">
                         {% if session.alignment == "good" %}
@@ -171,8 +185,12 @@
                     </div>
                     <!-- End of Alignment -->
                 </div>
+                <!-- End of Being Info -->
             </div>
+            <!-- End of Card Content -->
         </div>
+        <!-- End of Card -->
     </div>
+    <!-- End of Page Container -->
 </body>
 </html>
