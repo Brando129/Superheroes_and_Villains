@@ -21,6 +21,15 @@
                 <input type="text" name="name" class="search_bar rounded p-1 mx-2" placeholder="Search Heroes and Villains...">
                 <input type="submit" value="Search" class="search_button rounded">
             </form>
+            <!-- Flash messages -->
+            {% with messages = get_flashed_messages(category_filter=['h_and_v']) %}     <!-- declare a variable called messages -->
+                {% if messages %}                            <!-- check if there are any messages -->
+                    {% for message in messages %}            <!-- loop through the messages -->
+                        <h2 class="hero_txt title rounded my-4 p-3"><strong>{{message}}</strong></h2>                   <!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <!-- End of Flash messages -->
         </div>
     </div>
 </body>

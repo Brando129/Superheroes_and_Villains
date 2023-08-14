@@ -1,5 +1,6 @@
 from flask_app import app
 from flask import render_template, request, session, redirect
+from flask import flash
 import os
 import requests
 from pprint import pprint
@@ -21,11 +22,16 @@ def show_heroes_and_villains():
 # Post Routes
 @app.post('/search/heroes/villains')
 def search_heroes_and_villains():
+
     name = request.form['name']
     url = f"https://superheroapi.com/api/{header}/search/{name}"
     response = requests.get(url)
 
-    id = response.json()['results'][0]['id']
+    if 'results' not in response.json():
+        flash("No records found", "h_and_v")
+        return redirect('/')
+    else:
+        id = response.json()['results'][0]['id']
     url_two = f"https://superheroapi.com/api/{header}/{id}"
     response_two = requests.get(url_two)
 
@@ -45,10 +51,8 @@ def search_heroes_and_villains():
     # Biography
     session['full_name'] = response_two.json()['biography']['full-name']
     session['alter_egos'] = response_two.json()['biography']['alter-egos']
-    session['aliases'] = []
-    aliases = response_two.json()['biography']['aliases']
-    for i in range(len(aliases)):
-        session['aliases'].append(response_two.json()['biography']['aliases'][i])
+    session['aliases'] = response_two.json()['biography']['aliases']
+    aliases = session['aliases']
     session['place_of_birth'] = response_two.json()['biography']['place-of-birth']
     session['base'] = response_two.json()['work']['base']
     session['occupation'] = response_two.json()['work']['occupation']
