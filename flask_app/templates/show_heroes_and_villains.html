@@ -88,10 +88,12 @@
                             <hr>
                             <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">ALTER EGOS:</strong> {{ session.alter_egos }}</p>
                             <hr>
-                            <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">ALIASES:</strong></p>
+                            <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball">
+                            <strong class="fields_txt">ALIASES:</strong>
                             {% for alias in aliases %}
-                                <p>{{ session.aliases }}</p>
+                                {{ alias }}.
                             {% endfor %}
+                            </p>
                             <hr>
                             <p class="fields_txt"><img class="app_icon" src="/static/img/ball.png" alt="ball"><strong class="fields_txt">PLACE OF BIRTH:</strong> {{ session.place_of_birth }}</p>
                             <hr>
@@ -173,14 +175,22 @@
                     <!-- End of Fields Box -->
                     <!-- Alignment -->
                     <div class="p-4 mt-2 text-center text-light">
-                        {% if session.alignment == "good" %}
+                        {% if session.alignment == "good" and session.total_power > 500 %}
                         <div class="hero rounded">
-                            <h1 class="hero_txt">Hero</h1>
+                            <h1 class="hero_txt text-warning">Super Hero</h1>
+                        </div>
+                        {% elif session.alignment == "good" and session.total_power < 501 %}
+                        <div class="hero rounded">
+                            <h1 class="hero_txt"> Hero</h1>
+                        </div>
+                        {% elif session.alignment == "bad" and session.total_power > 500 %}
+                        <div class="villain rounded">
+                            <h1 class="villain_txt text-warning">Super Villain</h1>
                         </div>
                         {% else %}
-                            <div class="villain rounded">
-                                <h1 class="villain_txt">Villain</h1>
-                            </div>
+                        <div class="villain rounded">
+                            <h1 class="villain_txt">Villain</h1>
+                        </div>
                         {% endif %}
                     </div>
                     <!-- End of Alignment -->

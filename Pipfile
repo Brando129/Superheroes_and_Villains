@@ -10,6 +10,7 @@ flash = "*"
 pprintpp = "*"
 requests = "*"
 python-dotenv = "*"
+playsound = "*"
 
 [dev-packages]
 

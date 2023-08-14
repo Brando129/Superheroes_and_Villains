@@ -1,8 +1,10 @@
 from flask_app import app
 from flask import render_template, request, session, redirect
+from flask_app.controllers import controllers_users
 from flask import flash
 import os
 import requests
+from playsound import playsound
 from pprint import pprint
 
 # API Key
@@ -17,7 +19,8 @@ def index():
 # Route for rendering Show heroes and villains page.
 @app.get('/show/heroes/villains')
 def show_heroes_and_villains():
-    return render_template('show_heroes_and_villains.html')
+    aliases = controllers_users.session['aliases']
+    return render_template('show_heroes_and_villains.html', aliases=aliases)
 
 # Post Routes
 @app.post('/search/heroes/villains')
@@ -51,9 +54,10 @@ def search_heroes_and_villains():
     # Biography
     session['full_name'] = response_two.json()['biography']['full-name']
     session['alter_egos'] = response_two.json()['biography']['alter-egos']
-    session['aliases'] = response_two.json()['biography']['aliases']
-    aliases = session['aliases']
-    print(aliases)
+    if response_two.json()['biography']['aliases'] == ['-']:
+        session['aliases'] = ['No known aliases']
+    else:
+        session['aliases'] = response_two.json()['biography']['aliases']
     session['place_of_birth'] = response_two.json()['biography']['place-of-birth']
     session['base'] = response_two.json()['work']['base']
     session['occupation'] = response_two.json()['work']['occupation']
@@ -75,5 +79,21 @@ def search_heroes_and_villains():
     session['power'] = response_two.json()['powerstats']['power']
     session['combat'] = response_two.json()['powerstats']['combat']
     # End of Powerstats
+
+    # Total Power
+    intelligence = int(session['intelligence'])
+    strength = int(session['strength'])
+    speed = int(session['speed'])
+    durability = int(session['durability'])
+    power = int(session['power'])
+    combat = int(session['combat'])
+    sum = intelligence + strength + speed + durability + power + combat
+    session['total_power'] = sum
+    if session['total_power'] > 500:
+        playsound('flask_app/static/audio/big_impact.mp3', block=False)
+    else:
+        pass
+    print(f"Total power = {session['total_power']}")
+    # End of total Power
 
     return redirect('/show/heroes/villains')
