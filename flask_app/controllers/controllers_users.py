@@ -23,17 +23,22 @@ def show_heroes_and_villains():
     return render_template('show_heroes_and_villains.html', aliases=aliases)
 
 # Post Routes
+# Route to search for a being.
 @app.post('/search/heroes/villains')
 def search_heroes_and_villains():
 
+    # URl for searching a name that returns an id. The id carries all the beings data.
     name = request.form['name']
     url = f"https://superheroapi.com/api/{header}/search/{name}"
     response = requests.get(url)
 
+    # Validaton for searching a being.
     if 'results' not in response.json():
         flash("No records found", "h_and_v")
         return redirect('/')
     else:
+        """This second Url injects the id that is returned from the search
+        and gets all of the beings data"""
         id = response.json()['results'][0]['id']
     url_two = f"https://superheroapi.com/api/{header}/{id}"
     response_two = requests.get(url_two)
