@@ -89,11 +89,11 @@ def search_heroes_and_villains():
     combat = int(session['combat'])
     sum = intelligence + strength + speed + durability + power + combat
     session['total_power'] = sum
-    if session['total_power'] > 500:
-        playsound('flask_app/static/audio/big_impact.mp3', block=False)
-    else:
-        pass
-    print(f"Total power = {session['total_power']}")
+    # if session['total_power'] > 500:
+    #     playsound('', block=False)
+    # else:
+    #     pass
+    # print(f"Total power = {session['total_power']}")
     # End of total Power
 
     return redirect('/show/heroes/villains')
