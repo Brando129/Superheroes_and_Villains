@@ -4,7 +4,6 @@ from flask_app.controllers import controllers_users
 from flask import flash
 import os
 import requests
-from playsound import playsound
 from pprint import pprint
 
 # API Key
